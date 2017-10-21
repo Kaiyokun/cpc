@@ -1,0 +1,12 @@
+{
+	"folder": "template/",
+	"tmplts":
+	{
+		"list_container":  "list_container.html",
+		"code_container":  "code_container.html",
+		"ex_build_report": "exercise_build_report.html",
+		"ex_test_report":  "exercise_test_report.html",
+		"ex_report_doc":   "exercise_report.docx",
+		"ex_info":         "exercise_information.html"
+	}
+}

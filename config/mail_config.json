@@ -1,0 +1,27 @@
+{
+	"profile":
+	{
+		"account":  "",
+		"password": "",
+		"name":     "",
+		"mailbox":  ""
+	},
+	"imap":
+	{
+		"server": "imap.qq.com",
+		"port":    993,
+		"mode":   "ssl",
+		"folder": ""
+	},
+	"smtp":
+	{
+		"server": "smtp.qq.com",
+		"port":    465,
+		"mode":   "ssl"
+	},
+	"auth_sender":
+	[
+		"",
+		""
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"usage":    "邮件主题: cpc <cmd> [[param=]arg]...",
+	"cmd_hdr":  "指令",
+	"args_hdr": "指令参数说明(带*为管理员功能)",
+	"cmds":
+	[
+		{
+			"name":   "help",
+			"param":  "",
+			"desc":   "获取指令列表",
+			"method": "self.help",
+			"fetch":   false
+		},
+		{
+			"name":   "get-ex-list",
+			"param":  "",
+			"desc":   "获取练习列表",
+			"method": "self.get_exer_list",
+			"fetch":   false
+		},
+		{
+			"name":   "get-ex",
+			"param":  "[eid=]EXER-ID",
+			"desc":   "获取练习编号为EXER-ID的内容",
+			"method": "self.get_exer",
+			"fetch":   false
+		},
+		{
+			"name":   "commit-ex",
+			"param":  "[eid=]EXER-ID sid=STUD-ID",
+			"desc":   "提交练习编号为EXER-ID的练习, 学号为STUD-ID",
+			"method": "self.commit_exer",
+			"fetch":   true
+		},
+		{
+			"name":   "add-ex",
+			"param":  "[eid=]EXER-ID [src=SRC-CODE] [test=TEST-CODE] [ts=TIME-SPENT]",
+			"desc":   "(*)增加/修改练习编号为EXER-ID的练习, 代码模板为SRC-CODE, 测试代码为TEST-CODE, 测试用时为TIME-SPENT",
+			"method": "self.add_exer",
+			"fetch":   true
+		},
+		{
+			"name":   "del-ex",
+			"param":  "[eid=]EXER-ID",
+			"desc":   "(*)删除练习编号为EXER-ID的练习",
+			"method": "self.del_exer",
+			"fetch":   false
+		},
+		{
+			"name":   "get-ex-stat",
+			"param":  "",
+			"desc":   "(*)获取练习情况统计表",
+			"method": "self.get_exer_stat",
+			"fetch":   false
+		}
+	]
+}

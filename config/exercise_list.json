@@ -1,0 +1,19 @@
+{
+  "folder": "test/", 
+  "exs": [
+    {
+      "test": "ex1_unittest.c", 
+      "src": "ex1.c", 
+      "id": "1", 
+      "time_spent": 5, 
+      "brief": "求n!(n的阶乘). 对于n < 0, 规定n! = 1."
+    }, 
+    {
+      "test": "ex2_unittest.c", 
+      "src": "ex2.c", 
+      "id": "2", 
+      "time_spent": 5, 
+      "brief": "判断素数. 对于输入n, 如果为素数则返回true, 否则返回false"
+    }
+  ]
+}
