@@ -24,18 +24,18 @@
 
 主要模块功能:
 
-- (mail.py) 收发邮件
-- (util.py) 读写配置文件, 通过模板创建文件实例
-- (auto_check.py) C语言上机练习自动化主要模块
+- **[mail.py](mail.py)** 收发邮件
+- **[util.py](util.py)** 读写配置文件, 通过模板创建文件实例
+- **[auto_check.py](auto_check.py)** C语言上机练习自动化主要模块
 
 文件夹结构:
 
-- **config** 程序配置文件
-- **include** [Google Test](https://github.com/google/googletest)头文件及库文件
-- **template** html模板和Word模板文件
-- **test** 代码模板和单元测试文件
+- **[config](config)** 程序配置文件
+- **[include](include)** [Google Test](https://github.com/google/googletest)头文件及库文件
+- **[template](template)** html模板和Word模板文件
+- **[test](test)** 代码模板和单元测试文件
 
 使用说明:
 
-1. 在(config/student_list.xlsx)中添加学生信息
-1. 在(config/mail_config.json)中添加邮箱信息
+1. 在[config/student_list.xlsx](config/student_list.xlsx)中添加学生信息
+1. 在[config/mail_config.json](config/mail_config.json)中添加邮箱信息
