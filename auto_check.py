@@ -212,10 +212,9 @@ class AutoCheck:
 
 		return True
 
-	def help(self, args):
+	def help(self, args, subject='邮件指令说明, 如: cpc get-ex-list'):
 
-		self.__reply(args, '邮件指令说明, 如: cpc get-ex-list',
-			html=self.help_doc)
+		self.__reply(args, subject, html=self.help_doc)
 
 	def get_exer_list(self, args,
 		subject='练习列表, 可获取练习内容: cpc get-ex ', list_text=''):
@@ -659,6 +658,13 @@ class AutoCheck:
 				if cmd_args is None:
 
 					log.info('Unrelated mail(uid: <%d>).' %(uid))
+
+					# 标星邮件
+					self.mail.star_message(uid)
+
+					# 回复邮件 - 无效的邮件指令
+					self.help({'mail_digest': mail_digest},
+						'无效的邮件指令, 请在以下列表中重新选择:')
 
 					continue
 

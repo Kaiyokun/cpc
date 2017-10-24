@@ -14,6 +14,13 @@
       "id": "2", 
       "time_spent": 5, 
       "brief": "判断素数. 对于输入n, 如果为素数则返回true, 否则返回false"
+    }, 
+    {
+      "test": "ex3_unittest.c", 
+      "src": "ex3.c", 
+      "id": "3", 
+      "time_spent": 5.0, 
+      "brief": "练习内容:\r\n    给定一组整数, 返回能使其和等于指定值的两个整数的下标.\r\n    你可以假设每一组输入都必定有一个解, 并且同一个整数不能使用两次.\r\n\r\n示例:\r\n    int nums[] = {2, 7, 11, 15};\r\n    int target = 9;\r\n    // 因为nums[0] + num[1] = 2 + 7 = 9\r\n    // 所以返回{0, 1}\r\n\r\n来源: <https://leetcode.com/problems/two-sum/description/>"
     }
   ]
 }

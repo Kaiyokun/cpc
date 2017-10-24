@@ -18,6 +18,7 @@ namespace {
 
     // Tests some trivial cases.
     TEST(IsPrimeTest, Trivial) {
+
         EXPECT_FALSE(IsPrime(0));
         EXPECT_FALSE(IsPrime(1));
         EXPECT_TRUE(IsPrime(2));
@@ -26,6 +27,7 @@ namespace {
 
     // Tests positive input.
     TEST(IsPrimeTest, Positive) {
+
         EXPECT_FALSE(IsPrime(4));
         EXPECT_TRUE(IsPrime(5));
         EXPECT_FALSE(IsPrime(6));

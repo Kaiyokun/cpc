@@ -1,34 +1,34 @@
 {
 	"usage":    "邮件主题: cpc <cmd> [[param=]arg]...",
-	"cmd_hdr":  "指令",
-	"args_hdr": "指令参数说明(带*为管理员功能)",
+	"cmd_hdr":  "邮件主题",
+	"args_hdr": "邮件主题参数说明(带*为管理员功能)",
 	"cmds":
 	[
 		{
-			"name":   "help",
+			"name":   "cpc help",
 			"param":  "",
 			"desc":   "获取指令列表",
 			"method": "self.help",
 			"fetch":   false
 		},
 		{
-			"name":   "get-ex-list",
+			"name":   "cpc get-ex-list",
 			"param":  "",
 			"desc":   "获取练习列表",
 			"method": "self.get_exer_list",
 			"fetch":   false
 		},
 		{
-			"name":   "get-ex",
-			"param":  "[eid=]EXER-ID",
-			"desc":   "获取练习编号为EXER-ID的内容",
+			"name":   "cpc get-ex",
+			"param":  "练习编号",
+			"desc":   "获取练习编号为<练习编号>的内容",
 			"method": "self.get_exer",
 			"fetch":   false
 		},
 		{
-			"name":   "commit-ex",
-			"param":  "[eid=]EXER-ID sid=STUD-ID",
-			"desc":   "提交练习编号为EXER-ID的练习, 学号为STUD-ID",
+			"name":   "cpc commit-ex",
+			"param":  "练习编号 sid=学号",
+			"desc":   "提交练习编号为<练习编号>的练习, 学号为<学号>",
 			"method": "self.commit_exer",
 			"fetch":   true
 		},

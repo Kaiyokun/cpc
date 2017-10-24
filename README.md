@@ -2,6 +2,15 @@
 
 此工程用于实现C语言上机练习的自动收取, 批改, 反馈以及统计, 主要基于电子邮件技术, 使用Python 2.7开发
 
+功能截图
+
+![alt text](capture/help.png "指令说明")
+![alt text](capture/ex_list.png "练习列表")
+![alt text](capture/build_report.jpg "编译输出")
+![alt text](capture/test_report.jpg "测试报告")
+![alt text](capture/ex_report.jpg "实验报告")
+![alt text](capture/ex_stat.jpg "作业反馈表")
+
 使用的第三方Python软件包:
 
 - imapclient
@@ -39,3 +48,8 @@
 
 1. 在[config/student_list.xlsx](config/student_list.xlsx)中添加学生信息
 1. 在[config/mail_config.json](config/mail_config.json)中添加邮箱信息
+
+ISO C标准参考:
+
+- [ISO C Standard](http://www.open-std.org/jtc1/sc22/wg14/)
+- [ISO C11](C11.pdf)
