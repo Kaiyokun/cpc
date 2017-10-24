@@ -5,28 +5,28 @@
 	"cmds":
 	[
 		{
-			"name":   "cpc help",
+			"name":   "help",
 			"param":  "",
 			"desc":   "获取指令列表",
 			"method": "self.help",
 			"fetch":   false
 		},
 		{
-			"name":   "cpc get-ex-list",
+			"name":   "get-ex-list",
 			"param":  "",
 			"desc":   "获取练习列表",
 			"method": "self.get_exer_list",
 			"fetch":   false
 		},
 		{
-			"name":   "cpc get-ex",
+			"name":   "get-ex",
 			"param":  "练习编号",
 			"desc":   "获取练习编号为<练习编号>的内容",
 			"method": "self.get_exer",
 			"fetch":   false
 		},
 		{
-			"name":   "cpc commit-ex",
+			"name":   "commit-ex",
 			"param":  "练习编号 sid=学号",
 			"desc":   "提交练习编号为<练习编号>的练习, 学号为<学号>",
 			"method": "self.commit_exer",

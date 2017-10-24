@@ -69,7 +69,7 @@ class AutoCheck:
 			# +---------------+--------------+
 			# | 指令名 + 参数 | 指令参数说明 |
 			# +---------------+--------------+
-			cmd_list_table += [[' '.join([cmd['name'], cmd['param']]),
+			cmd_list_table += [[' '.join(['cpc', cmd['name'], cmd['param']]),
 				cmd['desc']]]
 
 		# 指令集说明文档
