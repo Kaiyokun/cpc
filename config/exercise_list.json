@@ -2,25 +2,28 @@
   "folder": "test/", 
   "exs": [
     {
-      "test": "ex1_unittest.c", 
       "src": "ex1.c", 
-      "id": "1", 
+      "brief": "求n!(n的阶乘). 对于n < 0, 规定n! = 1.", 
       "time_spent": 5, 
-      "brief": "求n!(n的阶乘). 对于n < 0, 规定n! = 1."
+      "href": "http://tpcg.io/FCAB06", 
+      "test": "ex1_unittest.c", 
+      "id": "1"
     }, 
     {
-      "test": "ex2_unittest.c", 
       "src": "ex2.c", 
-      "id": "2", 
+      "brief": "判断素数. 对于输入n, 如果为素数则返回true, 否则返回false", 
       "time_spent": 5, 
-      "brief": "判断素数. 对于输入n, 如果为素数则返回true, 否则返回false"
+      "href": "http://tpcg.io/ZZRqJX", 
+      "test": "ex2_unittest.c", 
+      "id": "2"
     }, 
     {
-      "test": "ex3_unittest.c", 
       "src": "ex3.c", 
-      "id": "3", 
+      "brief": "练习内容:\r\n    给定一组整数, 返回能使其和等于指定值的两个整数的下标.\r\n    你可以假设每一组输入都必定有一个解, 并且同一个整数不能使用两次.\r\n\r\n示例:\r\n    int nums[] = {2, 7, 11, 15};\r\n    int target = 9;\r\n    // 因为nums[0] + num[1] = 2 + 7 = 9\r\n    // 所以返回{0, 1}\r\n\r\n来源: <https://leetcode.com/problems/two-sum/description/>", 
       "time_spent": 5.0, 
-      "brief": "练习内容:\r\n    给定一组整数, 返回能使其和等于指定值的两个整数的下标.\r\n    你可以假设每一组输入都必定有一个解, 并且同一个整数不能使用两次.\r\n\r\n示例:\r\n    int nums[] = {2, 7, 11, 15};\r\n    int target = 9;\r\n    // 因为nums[0] + num[1] = 2 + 7 = 9\r\n    // 所以返回{0, 1}\r\n\r\n来源: <https://leetcode.com/problems/two-sum/description/>"
+      "href": "http://tpcg.io/CxZtVH", 
+      "test": "ex3_unittest.c", 
+      "id": "3"
     }
   ]
 }

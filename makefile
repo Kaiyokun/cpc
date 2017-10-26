@@ -2,7 +2,7 @@ GTEST_DIR = ../../..
 
 CPPFLAGS += -isystem $(GTEST_DIR)/include
 
-CXXFLAGS += -Wall -Wextra -pthread -D AUTO_CHECK
+CXXFLAGS += -Wall -Wextra -Werror -pthread -D AUTO_CHECK
 
 TEST = $(shell basename $(shell pwd))
 

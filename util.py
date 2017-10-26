@@ -135,29 +135,41 @@ class Util:
 
 		# <table id="list">
 		#	<pre id="title">list_text</pre>
-		#	<tr><!-- list_data[0] -->
-		#		<td><pre>str(list_data[0][0])</pre></td>
-		#		<td><pre>str(list_data[0][1])</pre></td>
+		#	<th><!-- list_data[0] -->
+		#		<td>str(list_data[0][0])</td>
+		#		<td>str(list_data[0][1])</td>
+		#		...
+		#	</th>
+		#	<tr><!-- list_data[1] -->
+		#		<td>str(list_data[1][0])</td>
+		#		<td>str(list_data[1][1])</td>
 		#		...
 		#	</tr>
-		#	<tr><!-- list_data[1] -->
-		#		<td><pre>str(list_data[1][0])</pre></td>
-		#		<td><pre>str(list_data[1][1])</pre></td>
+		#	<tr><!-- list_data[2] -->
+		#		<td>str(list_data[2][0])</td>
+		#		<td>str(list_data[2][1])</td>
 		#		...
 		#	</tr>
 		#	...
 		# </table>
-		for row in list_data:
+		tr = dom.new_tag('tr')
+		for col in list_data[0]:
+
+			th        = dom.new_tag('th')
+			th.string = str(col)
+
+			tr.append(th)
+
+		table.append(tr)
+
+		for row in list_data[1:]:
 
 			tr = dom.new_tag('tr')
 			for col in row:
 
-				td  = dom.new_tag('td')
-				pre = dom.new_tag('pre')
+				td        = dom.new_tag('td')
+				td.string = str(col)
 
-				pre.string = str(col)
-
-				td.append(pre)
 				tr.append(td)
 
 			table.append(tr)
@@ -165,12 +177,74 @@ class Util:
 		return str(dom)
 
 	@staticmethod
-	def create_html_code(file_name, src_name):
+	def create_html_exer_list(file_name, list_data, list_text=''):
 
-		with open(src_name, 'rb') as src:
+		with open(file_name, 'rb') as template:
 
-			return Util.create_html_from_template(
-				file_name, {'code': src.read()})
+			dom = BeautifulSoup(template, 'html.parser')
+
+		# <table id="list"></table>
+		table = dom.find('table', id='list')
+
+		# <table id="list">
+		#	<pre id="title">list_text</pre>
+		# </table>
+		pre = dom.new_tag('pre', id='title')
+		pre.string = list_text
+		table.append(pre)
+
+		# <table id="list">
+		#	<pre id="title">list_text</pre>
+		#	<th><!-- list_data[0] -->
+		#		<td>str(list_data[0][0])</td>
+		#		<td>str(list_data[0][1])</td>
+		#		<td>str(list_data[0][2])</td>
+		#	</th>
+		#	<tr><!-- list_data[1] -->
+		#		<td>str(list_data[1][0])
+		#		<td><pre>str(list_data[1][1])</pre></td>
+		#		<td><a href=str(list_data[1][2])>点击进入</a></td>
+		#	</tr>
+		#	<tr><!-- list_data[2] -->
+		#		<td>str(list_data[2][0])
+		#		<td><pre>str(list_data[2][1])</pre></td>
+		#		<td><a href=str(list_data[2][2])>点击进入</a></td>
+		#	</tr>
+		#	...
+		# </table>
+		tr = dom.new_tag('tr')
+		for col in list_data[0]:
+
+			th        = dom.new_tag('th')
+			th.string = str(col)
+
+			tr.append(th)
+
+		table.append(tr)
+
+		for col in list_data[1:]:
+
+			tr = dom.new_tag('tr')
+
+			td        = dom.new_tag('td')
+			td.string = str(col[0])
+			tr.append(td)
+
+			td         = dom.new_tag('td')
+			pre        = dom.new_tag('pre')
+			pre.string = str(col[1])
+			td.append(pre)
+			tr.append(td)
+
+			td       = dom.new_tag('td')
+			a        = dom.new_tag('a', href=str(col[2]))
+			a.string = '点击进入'
+			td.append(a)
+			tr.append(td)
+
+			table.append(tr)
+
+		return str(dom)
 
 	@staticmethod
 	def create_html_test_detail(file_name, ex_id,

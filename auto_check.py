@@ -220,9 +220,10 @@ class AutoCheck:
 		subject='练习列表, 可获取练习内容: cpc get-ex ', list_text=''):
 
 		self.__reply(args, subject,
-			html=Util.create_html_list(
-				self.tmplts['list_container'],
-				[['作业编号', '说明']] + [[ex['id'], ex['brief']]
+			html=Util.create_html_exer_list(
+				self.tmplts['code_container'],
+				[['作业编号', '说明', 'Online IDE(新)']]
+				+ [[ex['id'], ex['brief'], ex['href']]
 					for ex in self.ex_list['exs']],
 				list_text))
 
@@ -301,12 +302,12 @@ class AutoCheck:
 			# 提取练习代码
 
 			# 先设定错误消息
-			err_msg = '未找到代码附件'
+			err_msg = '未找到代码(附件/邮件正文)'
 
 			# 获取邮件主体
 			mail_body = args['mail_body']
 
-			# 遍历邮件附件
+			# 先遍历邮件附件
 			for part in mail_body.mailparts:
 
 				if part.filename is None:
@@ -327,10 +328,19 @@ class AutoCheck:
 
 						src.write(part.get_payload())
 
-			# 未找到代码附件
+			# 再检查邮件正文
 			if err_msg is not None:
 
-				raise ValueError(err_msg)
+				if mail_body.text_part is None or '' == mail_body.text_part:
+
+					raise ValueError(err_msg)
+
+				new_file_name = 'ex_%s.c' %(ex_info['id'])
+
+				with open(src_dir + new_file_name, 'wb') as src:
+
+					src.write(mail_body.text_part.get_payload()
+						.decode(mail_body.text_part.charset).encode('UTF-8'))
 
 		except (KeyError, ValueError) as err:
 
