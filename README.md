@@ -53,3 +53,7 @@ ISO C标准参考:
 
 - [ISO C Standard](http://www.open-std.org/jtc1/sc22/wg14/)
 - [ISO C11](C11.pdf)
+- [C参考手册(个人推荐)](http://zh.cppreference.com/w/c)
+
+关于字符集(代码文件编码问题): [What is character encoding?](https://chardet.readthedocs.io/en/latest/faq.html#what-is-character-encoding)
+在线编程网站: [Coding Ground](https://www.tutorialspoint.com/codingground.htm)

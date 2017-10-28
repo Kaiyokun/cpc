@@ -30,6 +30,24 @@ class AutoCheck:
 
 			args[dflt_arg_name] = args.pop(None)
 
+	@staticmethod
+	def __str_to_utf8(unknown_str, charset):
+
+		if charset is not None:
+
+			return unknown_str.decode(charset).encode('UTF-8')
+
+		# 先测试是否为UTF-8
+		try:
+
+			unknown_str.decode('UTF-8')
+			return unknown_str
+
+		# 否则应该是GB18030编码的简体中文
+		except UnicodeDecodeError:
+
+			return unknown_str.decode('GB18030').encode('UTF-8')
+
 	def __load_tmplts(self, conf_file_name):
 
 		# 读取邮件回复模板配置
@@ -326,7 +344,8 @@ class AutoCheck:
 					# 保存代码到指定文件夹
 					with open(src_dir + file_name, 'wb') as src:
 
-						src.write(part.get_payload())
+						src.write(AutoCheck.__str_to_utf8(
+							part.get_payload(), part.charset))
 
 			# 再检查邮件正文
 			if err_msg is not None:
